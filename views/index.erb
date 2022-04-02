@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="jp">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>テク子の部屋</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- テク子の部屋のヘッダー -->
+		<header>
+			<img src="img/tekuko.png" alt="テク子の部屋" />
+		</header>
+
+		<!-- メイン -->
+		<section class="main">
+			<div class="main-container">
+				<h2>
+					メンターランキング
+					<div class="lineLeft"></div>
+					<div class="lineRight"></div>
+				</h2>
+				<div class="mentors">
+					<div class="mentor">
+						<div class="mentorHeader vote1">
+							<span><%= @vote1.count %></span>
+						</div>
+						<div class="mentorPhoto">
+							<img class="mentorPhoto" src="img/gassi.jpeg" alt="gassi" />
+						</div>
+						<div class="mentorTextArea">
+							<h4 class="course"><%= @vote1.course %></h4>
+							<h5 class="name"><%= @vote1.name %></h5>
+							<p class="description"><%= @vote1.description %></p>
+						</div>
+					</div>
+
+					<div class="mentor">
+						<div class="mentorHeader vote2">
+							<span><%= @vote2.count %></span>
+						</div>
+						<div class="mentorPhoto">
+							<img class="mentorPhoto" src="img/gassi.jpeg" alt="gassi" />
+						</div>
+						<div class="mentorTextArea">
+							<h4 class="course"><%= @vote2.course %></h4>
+							<h5 class="name"><%= @vote2.name %></h5>
+							<p class="description"><%= @vote2.description %></p>
+						</div>
+					</div>
+
+					<div class="mentor">
+						<div class="mentorHeader vote3">
+							<span><%= @vote3.count %></span>
+						</div>
+						<div class="mentorPhoto">
+							<img class="mentorPhoto" src="img/gassi.jpeg" alt="gassi" />
+						</div>
+						<div class="mentorTextArea">
+							<h4 class="course"><%= @vote3.course %></h4>
+							<h5 class="name"><%= @vote3.name %></h5>
+							<p class="description"><%= @vote3.description %></p>
+						</div>
+					</div>
+				</div>
+
+				<!-- ここからメンター紹介 -->
+				<h2>
+					メンター紹介
+					<div class="lineLeft"></div>
+					<div class="lineRight"></div>
+				</h2>
+
+				<div class="mentors">
+					<% @mentors.each do |mentor| %>
+						<div class="mentor">
+							<div class="mentorHeader <%= mentor.isMentor ? "introHeader" : "mcHeader" %>" style="background-color: <%= mentor.color %>;">
+								<span style="color: <%= mentor.color %>"><%= mentor.alphabet %></span>
+							</div>
+							<div class="mentorPhoto">
+								<img class="mentorPhoto" src="img/gassi.jpeg" alt="gassi" />
+							</div>
+							<div class="mentorTextArea">
+								<h4 class="course"><%= mentor.course %></h4>
+								<h5 class="name"><%= mentor.name %></h5>
+								<p class="description"><%= mentor.description %></p>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<span>Presented by LiT! Mentors</span>
+		</footer>
+	</body>
+</html>
