@@ -15,3 +15,10 @@ get '/' do
   @vote3 = Mentor.all.order("count desc").third
   erb :index
 end
+
+post '/like/:id' do
+  mentor = Mentor.find(params[:id])
+  mentor.count = mentor.count + 1
+  mentor.save
+  redirect '/'
+end
