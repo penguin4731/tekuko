@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>へんしゅうがめん！！！</title>
+</head>
+<body>
+<% @mentors.each do |mentor| %>
+  <div>
+    <p><%= mentor.name %></p>
+    <form action="/edit_e3idwnq/<%= mentor.id %>" method="post">
+      <input type="text" name="description" value="<%= mentor.description %>">
+      <input type="submit">
+    </form>
+    <hr>
+  </div>
+<% end %>
+</body>
+</html>

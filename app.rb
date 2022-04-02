@@ -22,3 +22,15 @@ post '/like/:id' do
   mentor.save
   redirect '/'
 end
+
+get '/edit_e3idwnq' do
+  @mentors = Mentor.all.order("id asc")
+  erb :edit
+end
+
+post '/edit_e3idwnq/:id' do
+  mentor = Mentor.find(params[:id])
+  mentor.description = params[:description]
+  mentor.save
+  redirect '/edit_e3idwnq'
+end
