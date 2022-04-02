@@ -6,12 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>テク子の部屋</title>
 		<link rel="stylesheet" href="css/style.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500&display=swap"
-			rel="stylesheet"
-		/>
+		<script>
+		  (function(d) {
+		    var config = {
+		      kitId: 'bax4yrf',
+		      scriptTimeout: 3000,
+		      async: true
+		    },
+		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		  })(document);
+		</script>
 	</head>
 	<body>
 		<!-- テク子の部屋のヘッダー -->
@@ -38,6 +42,9 @@
 						<div class="mentorTextArea">
 							<h4 class="course"><%= @vote1.course %></h4>
 							<h5 class="name"><%= @vote1.name %></h5>
+							<form action="/like/<%= @vote1.id %>" method="post">
+								<input type="image" src="img/voteButton.svg"></input>
+							</form>
 							<p class="description"><%= @vote1.description %></p>
 						</div>
 					</div>
@@ -52,6 +59,9 @@
 						<div class="mentorTextArea">
 							<h4 class="course"><%= @vote2.course %></h4>
 							<h5 class="name"><%= @vote2.name %></h5>
+							<form action="/like/<%= @vote2.id %>" method="post">
+								<input type="image" src="img/voteButton.svg"></input>
+							</form>
 							<p class="description"><%= @vote2.description %></p>
 						</div>
 					</div>
@@ -66,6 +76,9 @@
 						<div class="mentorTextArea">
 							<h4 class="course"><%= @vote3.course %></h4>
 							<h5 class="name"><%= @vote3.name %></h5>
+							<form action="/like/<%= @vote3.id %>" method="post">
+								<input type="image" src="img/voteButton.svg"></input>
+							</form>
 							<p class="description"><%= @vote3.description %></p>
 						</div>
 					</div>
@@ -89,7 +102,10 @@
 							</div>
 							<div class="mentorTextArea">
 								<h4 class="course"><%= mentor.course %></h4>
-								<h5 class="name"><%= mentor.name %></h5>
+								<h5 class="name" style="color: <%= mentor.color %>"><%= mentor.name %></h5>
+								<form action="/like/<%= mentor.id %>" method="post">
+									<input type="image" src="img/voteButton.svg"></input>
+								</form>
 								<p class="description"><%= mentor.description %></p>
 							</div>
 						</div>
@@ -97,7 +113,6 @@
 				</div>
 			</div>
 		</section>
-
 		<footer>
 			<span>Presented by LiT! Mentors</span>
 		</footer>
