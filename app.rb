@@ -37,3 +37,9 @@ post '/edit_e3idwnq/:id' do
   mentor.save
   redirect '/edit_e3idwnq'
 end
+
+get '/reset_e3ifd' do
+  mentors = Mentor.all
+  mentors.update_all(count: 0)
+  redirect '/'
+end
