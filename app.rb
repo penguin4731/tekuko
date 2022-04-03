@@ -30,6 +30,7 @@ end
 
 post '/edit_e3idwnq/:id' do
   mentor = Mentor.find(params[:id])
+  mentor.img = params[:img]
   mentor.description = params[:description]
   mentor.save
   redirect '/edit_e3idwnq'
