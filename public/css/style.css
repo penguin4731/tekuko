@@ -209,3 +209,7 @@ footer span{
 .voteImg:hover {
 	display: none;
 }
+
+.loading {
+    display: none;
+}

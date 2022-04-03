@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>テク子の部屋</title>
 		<link rel="stylesheet" href="css/style.css" />
+		<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
 		<link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
@@ -52,7 +53,7 @@
 							<h4 class="course"><%= @vote1.course %></h4>
 							<h5 class="name" style="color: #e6b422"><%= @vote1.name %></h5>
 							<form action="/like/<%= @vote1.id %>" method="post">
-								<input type="image" src="img/voteButton.svg"></input>
+								<input type="image" src="img/voteButton.svg" class="btn"></input>
 							</form>
 							<p class="description"><%= @vote1.description %></p>
 						</div>
@@ -69,7 +70,7 @@
 							<h4 class="course"><%= @vote2.course %></h4>
 							<h5 class="name" style="color: #c0c0c0"><%= @vote2.name %></h5>
 							<form action="/like/<%= @vote2.id %>" method="post">
-								<input type="image" src="img/voteButton.svg"></input>
+								<input type="image" src="img/voteButton.svg" class="btn"></input>
 							</form>
 							<p class="description"><%= @vote2.description %></p>
 						</div>
@@ -86,7 +87,7 @@
 							<h4 class="course"><%= @vote3.course %></h4>
 							<h5 class="name" style="color: #9a6229"><%= @vote3.name %></h5>
 							<form action="/like/<%= @vote3.id %>" method="post">
-								<input type="image" src="img/voteButton.svg"></input>
+								<input type="image" src="img/voteButton.svg" class="btn"></input>
 							</form>
 							<p class="description"><%= @vote3.description %></p>
 						</div>
@@ -113,7 +114,7 @@
 								<h4 class="course"><%= mentor.course %></h4>
 								<h5 class="name" style="color: <%= mentor.color %>"><%= mentor.name %></h5>
 								<form action="/like/<%= mentor.id %>" method="post">
-									<input type="image" src="img/voteButton.svg"></input>
+									<input type="image" src="img/voteButton.svg" class="btn"></input>
 								</form>
 								<p class="description"><%= mentor.description %></p>
 							</div>
@@ -126,4 +127,19 @@
 			<span>Presented by LiT! Mentors</span>
 		</footer>
 	</body>
+	<script>
+		$(function() {
+		    $('.btn').on('click', function() {
+		        $('.btn').hide();
+		        $('.loading').show();
+
+		        // 3秒後に元に戻す
+		        setTimeout(function() {
+		            $('.btn').show();
+		            $('.loading').hide();
+		        }, 3000);
+		        console.log("hello");
+		    });
+		});
+	</script>
 </html>
