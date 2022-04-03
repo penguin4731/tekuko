@@ -50,7 +50,7 @@
 						</div>
 						<div class="mentorTextArea">
 							<h4 class="course"><%= @vote1.course %></h4>
-							<h5 class="name"><%= @vote1.name %></h5>
+							<h5 class="name" style="color: #e6b422"><%= @vote1.name %></h5>
 							<form action="/like/<%= @vote1.id %>" method="post">
 								<input type="image" src="img/voteButton.svg"></input>
 							</form>
@@ -67,7 +67,7 @@
 						</div>
 						<div class="mentorTextArea">
 							<h4 class="course"><%= @vote2.course %></h4>
-							<h5 class="name"><%= @vote2.name %></h5>
+							<h5 class="name" style="color: #c0c0c0"><%= @vote2.name %></h5>
 							<form action="/like/<%= @vote2.id %>" method="post">
 								<input type="image" src="img/voteButton.svg"></input>
 							</form>
@@ -84,7 +84,7 @@
 						</div>
 						<div class="mentorTextArea">
 							<h4 class="course"><%= @vote3.course %></h4>
-							<h5 class="name"><%= @vote3.name %></h5>
+							<h5 class="name" style="color: #9a6229"><%= @vote3.name %></h5>
 							<form action="/like/<%= @vote3.id %>" method="post">
 								<input type="image" src="img/voteButton.svg"></input>
 							</form>
