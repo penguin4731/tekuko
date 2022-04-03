@@ -30,6 +30,8 @@ end
 
 post '/edit_e3idwnq/:id' do
   mentor = Mentor.find(params[:id])
+  mentor.name = params[:name]
+  mentor.course = params[:course]
   mentor.img = params[:img]
   mentor.description = params[:description]
   mentor.save

@@ -7,18 +7,23 @@
   <title>へんしゅうがめん！！！</title>
 </head>
 <body>
-<% @mentors.each do |mentor| %>
-  <div>
-    <p><%= mentor.name %></p>
-    <form action="/edit_e3idwnq/<%= mentor.id %>" method="post">
-      <label for="img">メンターのアルファベット</label>
-      <input type="text" name="img" value="<%= mentor.img %>"><br>
-      <label for="description">説明</label>
-      <input type="text" name="description" value="<%= mentor.description %>"><br>
-      <input type="submit">
-    </form>
-    <hr>
-  </div>
-<% end %>
+  <h1>へんしゅうがめん！！！</h1>
+  <% @mentors.each do |mentor| %>
+    <div>
+      <p><%= mentor.name %></p>
+      <form action="/edit_e3idwnq/<%= mentor.id %>" method="post">
+        <label for="name">メンター名</label>
+        <input type="text" name="name" value="<%= mentor.name %>"><br>
+        <label for="course">コース</label>
+        <input type="text" name="course" value="<%= mentor.course %>"><br>
+        <label for="img">メンターのアルファベット</label>
+        <input type="text" name="img" value="<%= mentor.img %>"><br>
+        <label for="description">説明</label>
+        <textarea name="description"><%= mentor.description %></textarea><br>
+        <input type="submit">
+      </form>
+      <hr>
+    </div>
+  <% end %>
 </body>
 </html>

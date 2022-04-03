@@ -143,7 +143,7 @@ header img {
 
 .mentor .mentorPhoto {
 	width: 100%;
-	height: 250px;
+	height: 300px;
 	object-fit: cover;
 }
 
@@ -198,12 +198,8 @@ footer span{
 .voteImg {
 	position: absolute;
 	width: 10px;
-	/*width: 100%;*/
 	height: 100%;
-	/*top: 25%;*/
- /* left: 40px;*/
   background-color: #0a0a0a;
-  /*display: none;*/
 }
 
 .voteImg:hover {
