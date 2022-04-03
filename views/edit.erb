@@ -11,7 +11,10 @@
   <div>
     <p><%= mentor.name %></p>
     <form action="/edit_e3idwnq/<%= mentor.id %>" method="post">
-      <input type="text" name="description" value="<%= mentor.description %>">
+      <label for="img">メンターのアルファベット</label>
+      <input type="text" name="img" value="<%= mentor.img %>"><br>
+      <label for="description">説明</label>
+      <input type="text" name="description" value="<%= mentor.description %>"><br>
       <input type="submit">
     </form>
     <hr>
