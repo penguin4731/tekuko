@@ -23,6 +23,31 @@ post '/like/:id' do
   redirect '/'
 end
 
+get '/ranking' do
+  @mentors = Mentor.all.order("count desc")
+  erb :ranking
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 get '/edit_e3idwnq' do
   @mentors = Mentor.all.order("id asc")
   erb :edit
